@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -5,31 +6,68 @@
   <title>athreyas</title>
   <script src="tailwindcss.js"></script>
   
+  <!-- Configure Tailwind Custom Animations via CDN -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(8px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom CSS to handle initial hidden state and delays -->
+  <style>
+    /* Keeps elements hidden before the animation begins */
+    .animate-fade-in {
+      opacity: 0;
+    }
+    /* Delay classes */
+    .delay-100 { animation-delay: 100ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-500 { animation-delay: 500ms; }
+  </style>
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://googleapis.com" rel="stylesheet">
 </head>
 
 <body class="bg-neutral-950 text-slate-300 font-['Quicksand'] antialiased min-h-screen flex justify-center py-20 px-6">
   
   <div class="max-w-2xl w-full space-y-12">
     
-    <!-- HEADER SECTION (Uses Tailwind's native entrance animation) -->
-    <header class="animate-fade-in flex items-center space-x-4 border-b border-neutral-800 pb-8">
-      <div class="w-16 h-16 rounded-lg bg-neutral-800"></div> <!-- Placeholder for profile pic -->
+    <!-- HEADER SECTION -->
+    <header class="animate-fade-in delay-100 flex items-center space-x-4 border-b border-neutral-800 pb-8">
+      <!-- Profile Picture -->
+      <img 
+        src="pfp2.jpeg" 
+        alt="Athreya Deshpande" 
+        class="w-16 h-16 rounded-lg bg-neutral-800 object-cover border border-neutral-700 shadow-md"
+      />
       <div>
         <h1 class="text-3xl font-bold italic text-white">Athreya Deshpande</h1>
         <p class="text-emerald-400 font-medium text-sm tracking-wide">student & professional larper</p>
       </div>
     </header>
 
-    <!-- PARAGRAPHS -->
-    <p class="text-base leading-relaxed text-neutral-300">
+    <!-- PARAGRAPH 1 -->
+    <p class="animate-fade-in delay-300 text-base leading-relaxed text-neutral-300">
       Hi, I'm a 18 year old CS student @ PESU, physics enthusiast, league player, and curious mind deeply interested in psychology & machine learning.
     </p>
 
-    <p class="text-base leading-relaxed text-neutral-300">
+    <!-- PARAGRAPH 2 -->
+    <p class="animate-fade-in delay-500 text-base leading-relaxed text-neutral-300">
       Outside of studying, I'm usually writing code, watching league, reading, listening to music, or taking photos.
     </p>
 
