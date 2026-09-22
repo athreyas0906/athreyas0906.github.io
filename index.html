@@ -1,23 +1,32 @@
 <html lang="en">
-  <head>
-        <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>athreyas</title>
-          <!--<link rel="icon" type="image/x-icon" href="../static/rnpsmun25favi.png">-->
-    <script src="tailwindcss.js"></script>
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="tailwindcss.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>athreyas</title>
+  <script src="https://jsdelivr.net"></script>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
 
-    <!-- Data AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Righteous&family=Rozha+One&display=swap" rel="stylesheet">
-  </head>
-  <body class=" bg-black-950 text-aliceblue grid h-screen place-items-center md:w-[100vw] md:h-[100vw] overflow-x-hidden ">
-  <table class="flex h-screen items-center justify-center">
-    <tr><p>helloooo</p></tr>
-  </table>
-  </body>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Righteous&family=Rozha+One&display=swap" rel="stylesheet">
+</head>
+
+<!-- FIX: Changed background to neutral-950, and fixed height to h-screen across all devices -->
+<body class="bg-neutral-950 text-slate-100 grid h-screen w-screen place-items-center overflow-x-hidden font-['Quicksand']">
+
+  <!-- FIX: Removed the table. This div and the body class automatically center your content perfectly -->
+  <div class="text-center">
+    <p class="text-4xl font-bold tracking-wide">helloooo</p>
+  </div>
+
+  <!-- Initialize AOS (Scroll Animations) if you plan to use them later -->
+  <script>
+    AOS.init();
+  </script>
+</body>
 </html>
