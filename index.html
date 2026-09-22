@@ -17,16 +17,52 @@
 </head>
 
 <!-- FIX: Changed background to neutral-950, and fixed height to h-screen across all devices -->
-<body class="bg-neutral-950 text-slate-100 grid h-screen w-screen place-items-center overflow-x-hidden font-['Quicksand']">
+<!-- Main layout: Keeps everything centered, max-width mimics the layout in the image -->
+<body class="bg-neutral-950 text-slate-300 font-['Quicksand'] antialiased min-h-screen flex justify-center py-20 px-6">
+  
+  <div class="max-w-2xl w-full space-y-12">
+    
+    <!-- HEADER SECTION (Fades in immediately on load) -->
+    <header data-aos="fade-up" data-aos-duration="1000" class="flex items-center space-x-4 border-b border-neutral-800 pb-8">
+      <img src="https://placeholder.com" alt="Profile" class="w-16 h-16 rounded-lg object-cover">
+      <div>
+        <h1 class="text-3xl font-['Righteous'] text-white">Nisarga Adhikary</h1>
+        <p class="text-emerald-400 font-medium text-sm tracking-wide">software engineer & cybersecurity researcher</p>
+      </div>
+    </header>
 
-  <!-- FIX: Removed the table. This div and the body class automatically center your content perfectly -->
-  <div class="text-center">
-    <p class="text-4xl font-bold tracking-wide">helloooo</p>
+    <!-- PARAGRAPH 1 (Triggers as user scrolls) -->
+    <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" class="text-base leading-relaxed text-neutral-300">
+      Hi, I'm a 19 year old software engineer, cybersecurity researcher, CTF player, and curious mind deeply interested in open-source, cybersecurity, and digital investigations. I build things for fun (and sometimes they are actually useful).
+    </p>
+
+    <!-- PARAGRAPH 2 -->
+    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" class="text-base leading-relaxed text-neutral-300">
+      Outside of studying, I'm usually writing code, exploring security challenges, watching anime, reading, listening to music, or taking photos. I've worked at startups and non-profits, and most of my projects are available on <a href="#" class="text-white underline underline-offset-4 hover:text-emerald-400 dynamic-transition">GitHub</a>.
+    </p>
+
+    <!-- PARAGRAPH 3 -->
+    <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" class="text-base leading-relaxed text-neutral-300">
+      I'm open to new roles, collaborations, and opportunities. You can see my <a href="#" class="text-white underline underline-offset-4 hover:text-emerald-400">resume</a>, find me elsewhere, or reach out at <span class="text-white">hello@ni5arga.com</span>.
+    </p>
+
+    <!-- FOOTER NAVIGATION -->
+    <footer data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" class="pt-8 border-t border-neutral-900 flex flex-wrap gap-6 text-sm text-neutral-500 font-medium">
+      <a href="#" class="hover:text-white transition-colors">blog</a>
+      <a href="#" class="hover:text-white transition-colors">notes</a>
+      <a href="#" class="hover:text-white transition-colors">github</a>
+      <a href="#" class="hover:text-white transition-colors">twitter</a>
+    </footer>
+
   </div>
 
-  <!-- Initialize AOS (Scroll Animations) if you plan to use them later -->
+  <!-- CRITICAL: Initialize the AOS script at the very bottom -->
   <script>
-    AOS.init();
+    AOS.init({
+      once: true,      // Ensures animation only happens once while scrolling down
+      offset: 100,     // Triggers animation 100px before the element enters the viewport
+    });
   </script>
 </body>
+
 </html>
