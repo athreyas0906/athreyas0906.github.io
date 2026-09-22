@@ -4,121 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>athreyas</title>
+  
+  <!-- Standalone Tailwind CDN Development Build -->
   <script src="tailwindcss.js"></script>
-  <!-- Configure Tailwind Custom Animations via CDN -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0', transform: 'translateY(8px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-            scroll: {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(-50%)' }
-            }
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.6s ease-out forwards',
-            'scroll': 'scroll 25s linear infinite',
-          },
-        },
-      },
-    }
-  </script>
-  <!-- Custom CSS to handle initial hidden state, delays, and marquee masking -->
+  
   <style>
-    /* Keeps elements hidden before the animation begins */
+    /* Custom animation framework configuration */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
     .animate-fade-in {
       opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
     }
-    /* Delay classes */
+    
     .delay-100 { animation-delay: 100ms; }
     .delay-500 { animation-delay: 500ms; }
     .delay-1000 { animation-delay: 1000ms; }
     .delay-1200 { animation-delay: 1200ms; }
-    .delay-1500 { animation-delay: 1500ms; }
-
-    /* Smooth edge fading effect for the image marquee track */
-    .marquee-mask {
-      mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-    }
   </style>
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://googleapis.com" rel="stylesheet">
 </head>
-<body class="bg-neutral-950 text-slate-300 font-sans antialiased min-h-screen flex justify-center py-20 px-6">
-  <div class="max-w-2xl w-full space-y-12">
+<body class="bg-black text-neutral-400 font-sans antialiased min-h-screen flex justify-center py-20 px-6">
+  <div class="max-w-2xl w-full space-y-8">
     
     <!-- HEADER SECTION -->
-    <header class="animate-fade-in delay-100 flex items-center space-x-4 border-b border-neutral-800 pb-8">
-      <!-- Profile Picture -->
-      <img src="pfp2.jpeg" alt="Athreya Deshpande" class="w-16 h-16 rounded-lg bg-neutral-800 object-cover border border-neutral-700 shadow-md" />
+    <header class="animate-fade-in delay-100 flex items-center space-x-5 border-b border-neutral-900 pb-8">
+      <!-- Profile Picture Frame (Cycles 4 local images smoothly) -->
+      <div class="relative w-16 h-16 rounded-lg overflow-hidden bg-neutral-900 border border-neutral-800 flex-shrink-0">
+        <img src="pfp2.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 js-pfp-img" />
+        <img src="LinkdIn PFP.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 js-pfp-img" />
+        <img src="pfpzoom.png" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 js-pfp-img" />
+        <img src="athreya.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 js-pfp-img" />
+      </div>
       <div>
-        <h1 class="text-3xl font-bold italic text-white tracking-tight">Athreya Deshpande</h1>
-        <p class="text-emerald-400 font-medium text-sm tracking-wide">student & professional larper</p>
+        <h1 class="text-3xl font-normal font-serif italic text-white leading-none">Athreya Deshpande</h1>
+        <p class="text-neutral-500 font-medium text-sm tracking-wide mt-2">student & professional larper</p>
       </div>
     </header>
 
     <!-- PARAGRAPH 1 -->
-    <p class="animate-fade-in delay-500 text-base leading-relaxed text-neutral-300">
+    <p class="animate-fade-in delay-500 text-[16px] leading-relaxed text-neutral-400">
       Hi, I'm a 18 year old CS student @ PESU, physics enthusiast, league player, and curious mind deeply interested in psychology & machine learning.
     </p>
 
     <!-- PARAGRAPH 2 -->
-    <p class="animate-fade-in delay-1000 text-base leading-relaxed text-neutral-300">
+    <p class="animate-fade-in delay-1000 text-[16px] leading-relaxed text-neutral-400">
       Outside of studying, I'm usually writing code, watching league, reading, listening to music, or taking photos.
     </p>
 
-    <!-- INFINITE SCROLLING IMAGE CAROUSEL -->
-    <div class="animate-fade-in delay-1200 w-full overflow-hidden marquee-mask relative py-2">
-      <div class="flex w-max space-x-4 animate-scroll hover:[animation-play-state:paused]">
-        <!-- First Set of Images -->
-        <img src="https://unsplash.com" alt="Code" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        <img src="https://unsplash.com" alt="Gaming" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        <img src="https://unsplash.com" alt="Nature" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        <img src="https://unsplash.com" alt="Music" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        
-        <!-- Duplicate Set (Required for seamless endless loops) -->
-        <img src="https://unsplash.com" alt="Code" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        <img src="https://unsplash.com" alt="Gaming" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        <img src="https://unsplash.com" alt="Nature" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-        <img src="https://unsplash.com" alt="Music" class="w-56 h-36 object-cover rounded-lg border border-neutral-800 filter grayscale hover:grayscale-0 transition duration-300" />
-      </div>
-    </div>
-
-    <!-- TIME & DESTINATION FOOTER -->
-    <footer class="animate-fade-in delay-1500 pt-4 flex items-center space-x-2 text-xs font-mono tracking-wider text-neutral-500 uppercase">
+    <!-- TIME & LOCATION STAMP -->
+    <div class="animate-fade-in delay-1200 pt-6 flex items-center space-x-2 text-xs font-mono tracking-wider text-neutral-500 uppercase">
       <span>New Delhi, India</span>
-      <span class="text-neutral-700">•</span>
-      <span id="live-clock">00:00:00 PM IST</span>
-    </footer>
+      <span class="text-neutral-800">•</span>
+      <span id="live-clock">00:00 PM IST</span>
+    </div>
 
   </div>
 
-  <!-- Live Time JavaScript Block -->
   <script>
-    function updateClock() {
+    // PROFILE PICTURE ROTATION SCRIPT
+    const images = document.querySelectorAll('.js-pfp-img');
+    let currentIndex = 0;
+    const intervalSpeed = 3000; // Cycles images every 3 seconds
+
+    function rotateAvatar() {
+      // Fade out current avatar image
+      images[currentIndex].style.opacity = '0';
+      
+      // Determine index sequence loops
+      currentIndex = (currentIndex + 1) % images.length;
+      
+      // Fade in target selection
+      images[currentIndex].style.opacity = '1';
+    }
+    setInterval(rotateAvatar, intervalSpeed);
+
+    // LIVE RUNNING DESKTOP METRIC TIME SCRIPT
+    function updateLiveClock() {
       const options = {
         timeZone: 'Asia/Kolkata',
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
         hour12: true
       };
-      
       const formatter = new Intl.DateTimeFormat('en-US', options);
       document.getElementById('live-clock').textContent = formatter.format(new Date()) + ' IST';
     }
     
-    // Run loop every second
-    setInterval(updateClock, 1000);
-    updateClock();
+    setInterval(updateLiveClock, 60000); // Ticks over every minute
+    updateLiveClock();
   </script>
 </body>
 </html>
