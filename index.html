@@ -26,6 +26,15 @@
     .delay-1000 { animation-delay: 1000ms; }
     .delay-1500 { animation-delay: 1500ms; }
     .delay-2000 { animation-delay: 2000ms; }
+    html, body {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    html::-webkit-scrollbar, 
+    body::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, and Opera */
+    }
   </style>
 </head>
 <body class="bg-black text-neutral-400 font-sans antialiased min-h-screen flex justify-center py-20 px-6 selection:bg-emerald-400 selection:text-black">
@@ -93,7 +102,7 @@
     <li class="italic">97.58%ile in JEE Main</li>
   </ul>
 </div>
-<div class="animate-fade-in delay-1500 flex items-center gap-4 pt-2 border-t border-neutral-800">
+<div class="animate-fade-in delay-1500 flex items-center gap-8 pt-6 border-t border-neutral-800">
     <!-- LinkedIn -->
     <a href="https://linkedin.com/in/athreya-deshpande" target="_blank" rel="noopener noreferrer" 
        class="text-[14px] text-neutral-400 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
