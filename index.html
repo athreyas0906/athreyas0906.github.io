@@ -44,10 +44,10 @@
     <header class="animate-fade-in delay-100 flex items-center space-x-5 border-b border-neutral-900 pb-8">
       <!-- Profile Picture Frame (Cycles 4 local images smoothly) -->
       <div class="relative w-16 h-16 rounded-lg overflow-hidden bg-neutral-900 border border-neutral-800 flex-shrink-0">
-       <img src="pfp2.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover object-[center_35%] transition-opacity duration-700 opacity-100 js-pfp-img" />
-       <img src="LinkedIn PFP.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 js-pfp-img" />
+       <img src="pfp2.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover object-[40%_30%] transition-opacity duration-700 opacity-100 js-pfp-img" />
+       <img src="LinkedIn PFP.jpeg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover scale-110 transition-opacity duration-700 opacity-0 js-pfp-img" />
        <img src="pfpzoom.png" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 js-pfp-img" />
-       <img src="athreya.jpg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover object-[center_30%] transition-opacity duration-700 opacity-0 js-pfp-img" />
+       <img src="athreya.jpg" alt="Athreya Deshpande" class="absolute inset-0 w-full h-full object-cover object-[center_23%] transition-opacity duration-700 opacity-0 js-pfp-img" />
       </div>
 
       <div>
@@ -73,9 +73,12 @@
   
   <ul class="animate-fade-in delay-1000 text-[14px] leading-relaxed text-neutral-400 list-disc list-outside pl-5 space-y-4">
 <!-- Top Level Item 1: School Academics -->
-<li>
+<li class="list-none">
   <details class="group pb-2">
-    <summary class="w-fit list-item list-disc font-medium italic cursor-pointer select-none hover:text-neutral-200 transition-colors duration-200 [&::-webkit-details-marker]:hidden">
+    <summary class="w-fit flex items-start font-medium italic cursor-pointer list-none select-none hover:text-neutral-200 transition-colors duration-200 [&::-webkit-details-marker]:hidden [&::marker]:content-['']">
+      <!-- Bullet remains cleanly on the outside left -->
+      <span class="text-neutral-400 mr-2 select-none">•</span>
+      <!-- Underline wraps ONLY the text string -->
       <span class="border-b border-neutral-700/50 pb-0.5">
         Graduated with high distinction from NPS Rajajinagar
       </span>
@@ -91,9 +94,12 @@
 </li>
 
 <!-- Top Level Item 2: Separated MUN Portfolio -->
-<li class="mt-4">
+<li class="list-none mt-4">
   <details class="group pb-2">
-    <summary class="w-fit list-item list-disc font-medium italic cursor-pointer select-none hover:text-neutral-200 transition-colors duration-200 [&::-webkit-details-marker]:hidden">
+    <summary class="w-fit flex items-start font-medium italic cursor-pointer list-none select-none hover:text-neutral-200 transition-colors duration-200 [&::-webkit-details-marker]:hidden [&::marker]:content-['']">
+      <!-- Bullet remains cleanly on the outside left -->
+      <span class="text-neutral-400 mr-2 select-none">•</span>
+      <!-- Underline wraps ONLY the text string -->
       <span class="border-b border-neutral-700/50 pb-0.5">
         Avid MUN'er
       </span>
