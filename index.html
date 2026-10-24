@@ -6,6 +6,8 @@
   <title>athreyas</title>
   <link rel="icon" type="image/x-icon" href="A..png">
   <script src="tailwindcss.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  
   <style>
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(8px); }
@@ -73,8 +75,8 @@
     .box .card {
       position: relative;
       background: rgba(212, 212, 212, 0.1);
-      width: 19vw;
-      min-height: 24.116vw;
+      width: 12vw;
+      min-height: 12vw;
       backdrop-filter: blur(7px);
       border: 0.5px solid rgba(255, 255, 255, 0.15);
       border-radius: 70px;
@@ -88,21 +90,13 @@
       overflow: hidden;
       padding: 0.536vw;
     }
-     @media only screen and (max-width: 1200px){
-      .box .card{
-        width: 80vw;
-        min-height: 60vw;
-        justify-self:center;
-        justify-items: center;
-        
-      }
-    }
+    
 
     .box .card .elements {
       position: absolute;
       justify-self: center;
       justify-content: center;
-      width: 16.077vw;
+      width: 9vw;
       height: auto;
       border-radius: 5p70pxx;
       text-align: center;
@@ -112,62 +106,27 @@
       align-items: center;
       transition: all 0.63s ease;
     }
-         @media only screen and (max-width: 1200px){
-      .box .card .elements{
-        width: 70vw;
-        margin:0;
-        transform:translateY(0px);
-        justify-self:center;
-        justify-content: center;
-        margin: auto
-        
-      }
-    }
+       
     .box .card .elements h2 {
-      font-size: 1.34vw;
+      font-size: 1.1vw;
       font-weight: 600;
       color: #c9c9c9;
       text-transform: uppercase;
     }
-         @media only screen and (max-width: 1200px){
-      .box .card .elements{
-        width: 70vw;
-        margin:auto;
-        transform:translateY(0px);
-        justify-self:center;
-        
-      }
-    }
+ 
     .box .card .elements p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #2bd4a9;
     }
-      @media only screen and (max-width: 1200px){
-      .box .card .elements h2{
-        font-size:6vw;
-        
-      }
-    }
-       @media only screen and (max-width: 1200px){
-      .box .card .elements p{
-        font-size:2.2rem;
-        
-      }
-    }
+   
+
     .box .card .elements .a1 {
-      font-size: 21px;
+      font-size: 15px;
       color: #2bd4a9;
       overflow: hidden;
       opacity: 0;
-      padding: 2.68vw;
+      padding: 1.3vw;
       bottom: 0vw;
-    }
-@media only screen and (max-width: 1200px){
-      .box .card .elements .a1{
-        font-size:4vw;
-        bottom:1.608vw;
-        opacity: 1;
-      }
     }
  
     .box .card:hover .elements {
@@ -175,33 +134,16 @@
       transition: 0.5s;
       transition-timing-function: ease;
     }
-    @media only screen and (max-width: 1200px){
-      .box .card:hover .elements{
-        transition: none;
-        transform: none;
-        
-      }
-    }
+
 
     .box .card:hover .elements .a1 {
-      transform: translateY(-1.608vw);
-      padding: 3.215vw;
+      transform: translateY(-1.08vw);
+      padding: 2.215vw;
       transition: 0.5s;
       transition-timing-function: ease;
       opacity: 1;
     }
-     @media only screen and (max-width: 1200px){
-      .box .card:hover .elements .a1{
-        transition: none;
-        transform: none;
-        padding:2.68vw;
-      }
-    }
-
-    ul * {
-      color: white;
-      font-weight: 200 !important;
-    }
+  
     
     .animate-fade-in {
       opacity: 0;
@@ -247,6 +189,8 @@
     <p class="animate-fade-in delay-500 text-[14px] leading-relaxed text-neutral-400">
       Education -
     </p>
+    <br>
+    <div class="animate-fade-in delay-1500 text-[14px] leading-relaxed text-neutral-400">
  <div class="container">
       <div class="box">
         <div class="card">
@@ -260,22 +204,11 @@
           </div>
         </div>
       </div>
-   <div class="container">
-      <div class="box">
-        <div class="card">
-          <div class="elements">
-            <h2>National Public School - Rajajinagar</h2>
-            <div class="a1">Grade 1-12</div>
-            <div class="a1">Graduated with 96.2%</div>
-          </div>
-          <div class="js-tilt-glare">
-            <div class="js-tilt-glare-inner"></div>
-          </div>
-        </div>
-      </div>
+   </div>
    <!----<p class="animate-fade-in delay-1000 text-[14px] leading-relaxed text-neutral-400">
      
     </p>-->
+   <br>
   <div class="animate-fade-in delay-1500 text-[14px] leading-relaxed text-neutral-400">
   <p class="italic text-[14px] mb-2">About me -</p>
   
